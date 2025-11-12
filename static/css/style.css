@@ -1,0 +1,505 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: #f8f9fb;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0078ff;
+}
+.logo span {
+    color: #ff6a00;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+}
+nav a:hover,
+nav a.active {
+    color: #0078ff;
+}
+
+/* ===== HERO ===== */
+.hero {
+    background: linear-gradient(to right, #0078ff, #00c6ff);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    border-radius: 0 0 40px 40px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: white;
+    color: #0078ff;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.btn:hover {
+    background: #ff6a00;
+    color: white;
+}
+
+/* ===== STATS ===== */
+.stats {
+    padding: 60px 0;
+    background: white;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.stat h2 {
+    color: #0078ff;
+    font-size: 2rem;
+}
+
+/* ===== BENEFITS ===== */
+.benefits {
+    padding: 70px 0;
+}
+
+.benefits h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.benefit-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+.benefit-card h3 {
+    color: #0078ff;
+    margin-bottom: 10px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #1a1a1a;
+    color: #ccc;
+    padding: 40px 0 20px;
+    margin-top: 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0078ff;
+}
+.footer-logo span {
+    color: #ff6a00;
+}
+
+.footer-info p {
+    margin-bottom: 6px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+    transition: 0.3s;
+}
+.footer-links a:hover {
+    color: white;
+}
+
+footer p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+
+/* ===== ABOUT PAGE ===== */
+.about {
+    padding: 60px 0;
+}
+
+.about h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #0078ff;
+    margin-bottom: 20px;
+}
+
+.about .intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1 1 55%;
+}
+
+.about-text h2 {
+    margin-top: 20px;
+    color: #0078ff;
+}
+
+.about-text ul {
+    margin-top: 10px;
+    list-style: none;
+    padding: 0;
+}
+.about-text li {
+    margin-bottom: 8px;
+}
+
+
+/* ===== CONTACT PAGE ===== */
+.contact {
+    padding: 60px 0;
+}
+
+.contact h1 {
+    text-align: center;
+    color: #0078ff;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.contact-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.contact-info {
+    flex: 1 1 40%;
+}
+
+.contact-info h2 {
+    margin-bottom: 10px;
+    color: #0078ff;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.contact-info li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #0078ff;
+    transition: 0.3s;
+}
+.social-links a:hover {
+    color: #ff6a00;
+}
+
+/* ===== FORM ===== */
+.contact-form {
+    flex: 1 1 55%;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.contact-form h2 {
+    color: #0078ff;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #0078ff;
+    outline: none;
+}
+
+.contact-form .btn {
+    background: #0078ff;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.contact-form .btn:hover {
+    background: #ff6a00;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .contact-grid {
+        flex-direction: column;
+    }
+}
+
+
+
+
+/* ===== VACANCY PAGE ===== */
+.vacancies {
+    padding: 60px 0;
+}
+
+.vacancies h1 {
+    text-align: center;
+    color: #0078ff;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.vacancy-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.vacancy-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.vacancy-card:hover {
+    transform: translateY(-5px);
+}
+
+.vacancy-card h2 {
+    color: #0078ff;
+    margin-bottom: 10px;
+}
+
+.vacancy-card p {
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+
+
+
+/* ===== COMPANIES PAGE ===== */
+.companies {
+    padding: 60px 0;
+}
+
+.companies h1 {
+    text-align: center;
+    color: #0078ff;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.company-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.company-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.company-card:hover {
+    transform: translateY(-5px);
+}
+
+.company-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.company-card h2 {
+    color: #0078ff;
+    margin-bottom: 5px;
+}
+
+.company-card p {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+
+
+.responses-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.responses-container h1 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 30px;
+}
+
+.response-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.response-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.response-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.response-card h2 {
+    margin-top: 0;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.response-card p {
+    margin: 6px 0;
+    color: #555;
+}
+
+.response-card a {
+    color: #2196F3;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.response-card a:hover {
+    text-decoration: underline;
+}
+

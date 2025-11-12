@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>{% block title %}RentaCar{% endblock title %}</title>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                🚘 <span>Renta</span>Car
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}" class="active">Главная</a></li>
+                    <li><a href="{% url 'company' %}">Компании</a></li>
+                    <li><a href="{% url 'renta_detail_view' %}">Аренды</a></li>
+                    <li><a href="{% url 'about' %}">О нас</a></li>
+                    <li><a href="{% url 'contact' %}">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block main %}
+        {% endblock main %}
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-logo">
+                🚗 <span>Renta</span>Car
+            </div>
+            <div class="footer-info">
+                <p>📍 Душанбе, ул. Рудаки 45</p>
+                <p>📧 support@rentacar.tj</p>
+                <p>📞 +992 900 987 654</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Условия аренды</a>
+                <a href="#">Политика конфиденциальности</a>
+                <a href="#">Обратная связь</a>
+            </div>
+        </div>
+        <p class="copyright">© 2025 RentaCar. Все права защищены.</p>
+    </footer>
+</body>
+</html>

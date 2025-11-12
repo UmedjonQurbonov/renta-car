@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Бронирование автомобиля{% endblock title %}
+
+{% block main %}
+<section class="renta-form-section">
+    <div class="renta-form-container">
+        <h1>Бронирование автомобиля</h1>
+        <p>Заполните форму, чтобы забронировать автомобиль</p>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <label for="fullname">ФИО</label>
+            <input type="text" name="fullname" id="fullname" placeholder="Введите ваше имя" required>
+
+            <label for="age">Возраст</label>
+            <input type="number" name="age" id="age" placeholder="Введите ваш возраст" required>
+
+            <label for="phone">Телефон</label>
+            <input type="text" name="phone" id="phone" placeholder="+992 900 123 456" required>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="example@mail.com" required>
+
+            <input type="submit" value="Забронировать">
+        </form>
+    </div>
+</section>
+{% endblock main %}

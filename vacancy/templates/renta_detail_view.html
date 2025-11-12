@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Все бронирования{% endblock title %}
+
+{% block main %}
+<section class="rentas container">
+    <h1>Все бронирования автомобилей</h1>
+
+    {% if rentas %}
+        <div class="renta-list">
+            {% for renta in rentas %}
+                <div class="renta-card">
+                    <img src="{{ renta.car.image.url }}" alt="{{ renta.car.model }}">
+                    <h2>{{ renta.car.model }} ({{ renta.car.company.name }})</h2>
+                    <p><strong>Год выпуска:</strong> {{ renta.car.year }}</p>
+                    <p><strong>Цена в день:</strong> {{ renta.car.price_per_day }} $</p>
+                    <hr>
+                    <h3>Данные клиента</h3>
+                    <p><strong>ФИО:</strong> {{ renta.fullname }}</p>
+                    <p><strong>Возраст:</strong> {{ renta.age }} лет</p>
+                    <p><strong>Телефон:</strong> {{ renta.phone }}</p>
+                    <p><strong>Email:</strong> {{ renta.email }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Пока нет бронирований.</p>
+    {% endif %}
+</section>
+{% endblock main %}

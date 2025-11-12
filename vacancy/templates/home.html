@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+
+{% block main %}
+<section class="hero">
+    <div class="container hero-content">
+        <h1>Арендуйте авто быстро и удобно</h1>
+        <p>RentaCar — это надёжный сервис аренды машин по всему Таджикистану. Более <strong>150+</strong> автомобилей для любых целей — от городских поездок до путешествий.</p>
+        <a href="{% url 'company' %}" class="btn">Посмотреть автомобили</a>
+    </div>
+</section>
+
+<section class="stats">
+    <div class="container stats-grid">
+        <div class="stat">
+            <h2>150+</h2>
+            <p>Автомобилей в наличии</p>
+        </div>
+        <div class="stat">
+            <h2>30+</h2>
+            <p>Партнёрских компаний</p>
+        </div>
+        <div class="stat">
+            <h2>99%</h2>
+            <p>Довольных клиентов</p>
+        </div>
+    </div>
+</section>
+
+<section class="benefits">
+    <div class="container">
+        <h2>Почему выбирают нас</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h3>Удобный онлайн-сервис</h3>
+                <p>Бронируйте автомобиль за пару минут прямо с сайта — без лишней бюрократии и звонков.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Широкий выбор</h3>
+                <p>От эконом-класса до премиум-авто — выберите то, что подходит именно вам.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Доступные цены</h3>
+                <p>Гибкая система скидок, акции и лояльные условия для постоянных клиентов.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Круглосуточная поддержка</h3>
+                <p>Наша служба поддержки работает 24/7 и готова помочь в любой ситуации на дороге.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock main %}

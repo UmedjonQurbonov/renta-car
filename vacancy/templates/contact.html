@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Контакты{% endblock title %}
+
+{% block main %}
+
+<section class="contact container">
+    <h1>Свяжитесь с нами</h1>
+    <p class="contact-intro">
+        У вас есть вопросы по аренде авто или предложения?  
+        Напишите нам — мы ответим в ближайшее время!
+    </p>
+
+    <div class="contact-grid">
+        <div class="contact-info">
+            <h2>Наши контакты</h2>
+            <ul>
+                <li>📍 Душанбе, ул. Сомони 25</li>
+                <li>📞 +992 900 123 456</li>
+                <li>📧 info@rentacar.tj</li>
+                <li>🕒 Пн–Пт: 09:00–18:00</li>
+            </ul>
+
+            <h2>Мы в соцсетях</h2>
+            <div class="social-links">
+                <a href="#">🌐 Telegram</a>
+                <a href="#">📘 Facebook</a>
+                <a href="#">📸 Instagram</a>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2>Отправить сообщение</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Имя</label>
+                    <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Электронная почта</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Сообщение</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Ваше сообщение..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn">Отправить</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock main %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Наши компании{% endblock title %}
+
+{% block main %}
+<section class="companies container">
+    <h1>Наши компании-производители авто</h1>
+
+    {% if companies %}
+        <div class="company-grid">
+            {% for company in companies %}
+                <div class="company-card">
+                    <a href="{% url 'car-detail' company.id %}">
+                        <img src="{{ company.image.url }}" alt="{{ company.name }}">
+                    </a>
+                    <h2>{{ company.name }}</h2>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Компании ещё не добавлены.</p>
+    {% endif %}
+</section>
+{% endblock main %}

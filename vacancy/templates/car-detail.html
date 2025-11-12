@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Автомобили компании {{ companies.name }}{% endblock title %}
+
+{% block main %}
+
+<section class="cars container">
+    <h1>Автомобили компании {{ companies.name }}</h1>
+
+    {% if cars %}
+        <div class="car-list">
+            {% for car in cars %}
+                <div class="car-card">
+                    <img src="{{ car.image.url }}" alt="{{ car.model }}">
+                    <h2>{{ car.model }}</h2>
+                    <p><strong>Год выпуска:</strong> {{ car.year }}</p>
+                    <p><strong>Цена в день:</strong> {{ car.price_per_day }} $</p>
+                    <a href="{% url 'renta-create' car.id %}" class="btn">Забронировать</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>У этой компании пока нет доступных автомобилей.</p>
+    {% endif %}
+</section>
+
+{% endblock main %}
