@@ -1,29 +1,35 @@
 {% extends 'base.html' %}
-{% block title %}Бронирование автомобиля{% endblock title %}
+{% block title %}Аренда {{ cars.model }}{% endblock title %}
 
 {% block main %}
-<section class="renta-form-section">
-    <div class="renta-form-container">
-        <h1>Бронирование автомобиля</h1>
-        <p>Заполните форму, чтобы забронировать автомобиль</p>
+<div class="renta-form-container">
+    <h1>Аренда автомобиля {{ cars.model }}</h1>
 
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
+    <img src="{{ cars.image.url }}" alt="{{ cars.model }}">
 
-            <label for="fullname">ФИО</label>
-            <input type="text" name="fullname" id="fullname" placeholder="Введите ваше имя" required>
+    <p>Цена за день: {{ cars.price_per_day }} сомони</p>
 
-            <label for="age">Возраст</label>
-            <input type="number" name="age" id="age" placeholder="Введите ваш возраст" required>
+    <form method="post">
+        {% csrf_token %}
 
-            <label for="phone">Телефон</label>
-            <input type="text" name="phone" id="phone" placeholder="+992 900 123 456" required>
+        <label for="fullname">ФИО</label>
+        <input type="text" name="fullname" id="fullname" placeholder="Ваше имя" required>
 
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="example@mail.com" required>
+        <label for="age">Возраст</label>
+        <input type="number" name="age" id="age" placeholder="Ваш возраст" required>
 
-            <input type="submit" value="Забронировать">
-        </form>
-    </div>
-</section>
+        <label for="phone">Телефон</label>
+        <input type="text" name="phone" id="phone" placeholder="+992 900 123 456" required>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="example@mail.com" required>
+
+        <label for="days">Количество дней аренды</label>
+        <input type="number" name="days" id="days" value="1" min="1" required>
+
+        <p>Итоговая цена: <span id="total-price">{{ cars.price_per_day }}</span> сомони</p>
+
+        <button type="submit">Арендовать</button>
+    </form>
+</div>
 {% endblock main %}

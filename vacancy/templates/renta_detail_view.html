@@ -13,6 +13,8 @@
                     <h2>{{ renta.car.model }} ({{ renta.car.company.name }})</h2>
                     <p><strong>Год выпуска:</strong> {{ renta.car.year }}</p>
                     <p><strong>Цена в день:</strong> {{ renta.car.price_per_day }} $</p>
+                    <p><strong>Количество дней аренды:</strong> {{ renta.days }}</p>
+                    <p><strong>Итоговая цена:</strong> {{ renta.total_price }} $</p>
                     <hr>
                     <h3>Данные клиента</h3>
                     <p><strong>ФИО:</strong> {{ renta.fullname }}</p>

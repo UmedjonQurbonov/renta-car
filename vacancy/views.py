@@ -15,22 +15,38 @@ def car_detail_view(request, pk):
         return render(request, 'car-detail.html', {'companies': company, 'cars': car})
 
 def renta_create_view(request, pk): 
-    if request.method=="GET":    
-        car = Car.objects.filter(id=pk).first()
-        renta = Renta.objects.filter(car=car)
-        return render(request, 'renta-create.html', {'cars': car, 'renta': renta})
+    car = Car.objects.get(id=pk)
+
+    if request.method == "GET":    
+        return render(request, 'renta-create.html', {'car': car})
+    
     elif request.method == "POST":
-        car = request.POST.get('car', None)
-        fullname = request.POST.get("fullname", None)
-        age = request.POST.get("age", None)
-        phone = request.POST.get("phone", None)
-        email = request.POST.get("email", None)
-        if not fullname or not age or not phone or not email:
-            return HttpResponse("Fields are required!")
-        car = Car.objects.get(id=pk)
-        renta = Renta(fullname=fullname, age=age, phone=phone, email=email, car=car)
+        fullname = request.POST.get("fullname")
+        age = request.POST.get("age")
+        phone = request.POST.get("phone")
+        email = request.POST.get("email")
+        days = request.POST.get("days")
+
+        if not fullname or not age or not phone or not email or not days:
+            return HttpResponse("Все поля обязательны!")
+
+        days = int(days)
+        total_price = car.price_per_day * days
+
+        renta = Renta(
+            fullname=fullname,
+            age=age,
+            phone=phone,
+            email=email,
+            car=car,
+            days=days,
+            total_price=total_price
+        )
         renta.save()
         return redirect("/")
+    
+    return render(request, 'renta-create.html', {'car': car})
+
 
 def renta_detail_view(request):
     renta = Renta.objects.select_related('car').all()

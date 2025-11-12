@@ -688,15 +688,10 @@ button.btn:hover {
 }
 
 
-
-.renta-form-section {
-    padding: 50px 0;
-    background: #f9f9f9;
-}
-
+/* Renta-Car form styles */
 .renta-form-container {
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 600px;
+    margin: 50px auto;
     padding: 30px;
     background: #fff;
     border-radius: 10px;
@@ -705,46 +700,48 @@ button.btn:hover {
 
 .renta-form-container h1 {
     text-align: center;
-    margin-bottom: 15px;
     color: #333;
+    margin-bottom: 20px;
+}
+
+.renta-form-container img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .renta-form-container p {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #555;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
-.renta-form-container label {
+.renta-form-container form label {
     display: block;
     margin-bottom: 5px;
-    font-weight: 500;
-    color: #444;
+    font-weight: 600;
 }
 
-.renta-form-container input[type="text"],
-.renta-form-container input[type="number"],
-.renta-form-container input[type="email"] {
+.renta-form-container form input {
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     margin-bottom: 15px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    font-size: 14px;
+    box-sizing: border-box;
 }
 
-.renta-form-container input[type="submit"] {
+.renta-form-container form button {
     width: 100%;
     padding: 12px;
-    background: #007BFF;
+    background: #4CAF50;
     color: white;
-    font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
     transition: background 0.3s ease;
 }
 
-.renta-form-container input[type="submit"]:hover {
-    background: #0056b3;
+.renta-form-container form button:hover {
+    background: #45a049;
 }

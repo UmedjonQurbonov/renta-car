@@ -32,6 +32,8 @@ class Renta(models.Model):
     age = models.IntegerField()
     phone = models.CharField(max_length=20)
     email = models.CharField(max_length=50)
+    days = models.IntegerField(default=1) 
+    total_price = models.FloatField(default=0) 
     
     class Meta: 
         db_table = 'renta'
